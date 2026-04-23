@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>joysofmarie</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --lavender:#e8e0f5;--lavender-mid:#c9b8e8;--lavender-deep:#9b7fc2;
+  --mint:#d6f0e8;--mint-mid:#a8dcc8;
+  --blush:#fce8ee;--blush-mid:#f5c2d0;--blush-deep:#e8839e;
+  --cream:#fdfaf7;--text-dark:#2d2230;--text-mid:#6b5672;--text-soft:#a08aaa;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(253,250,247,0.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(232,224,245,0.5)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;letter-spacing:0.08em;color:var(--text-dark)}
+.nav-logo span{color:var(--lavender-deep);font-style:italic}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;font-size:0.78rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-mid);transition:color 0.2s;cursor:pointer}
+.nav-links a:hover{color:var(--lavender-deep)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:6rem 2.5rem 3rem;gap:3rem}
+.hero-eyebrow{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--blush-deep);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.6rem}
+.hero-eyebrow::before{content:'';width:2rem;height:1px;background:var(--blush-deep)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:1.05;margin-bottom:1.5rem}
+.hero-title em{font-style:italic;color:var(--lavender-deep)}
+.hero-subtitle{font-size:0.95rem;line-height:1.8;color:var(--text-mid);max-width:420px;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{padding:0.85rem 2rem;background:var(--lavender-deep);color:white;border:none;border-radius:40px;font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.3s}
+.btn-primary:hover{background:var(--text-mid);transform:translateY(-2px)}
+.btn-outline{padding:0.85rem 2rem;background:transparent;color:var(--lavender-deep);border:1px solid var(--lavender-mid);border-radius:40px;font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.3s}
+.btn-outline:hover{background:var(--lavender);transform:translateY(-2px)}
+.hero-visual{position:relative;height:580px}
+.hero-blob{position:absolute;border-radius:60% 40% 55% 45%/45% 55% 45% 55%;animation:blobmorph 8s ease-in-out infinite}
+.blob1{width:380px;height:380px;background:linear-gradient(135deg,var(--lavender),var(--lavender-mid));top:10%;left:5%}
+.blob2{width:260px;height:260px;background:linear-gradient(135deg,var(--blush),var(--blush-mid));bottom:15%;right:0%;animation-delay:-4s}
+.blob3{width:180px;height:180px;background:linear-gradient(135deg,var(--mint),var(--mint-mid));top:5%;right:10%;animation-delay:-2s}
+@keyframes blobmorph{0%,100%{border-radius:60% 40% 55% 45%/45% 55% 45% 55%}50%{border-radius:40% 60% 45% 55%/55% 45% 55% 45%}}
+.hero-card{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(253,250,247,0.92);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.8);border-radius:24px;padding:2rem;width:270px;box-shadow:0 8px 40px rgba(155,127,194,0.15)}
+.hero-card-tag{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--blush-deep);margin-bottom:0.5rem}
+.hero-card-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--text-dark);margin-bottom:0.5rem}
+.hero-card-sub{font-size:0.78rem;color:var(--text-soft);line-height:1.6;font-style:italic}
+.color-dots{display:flex;gap:6px;margin-top:1rem}
+.cdot{width:20px;height:20px;border-radius:50%}
+.quote-banner{padding:4rem 2.5rem;background:var(--lavender);text-align:center;border-top:1px solid rgba(201,184,232,0.4);border-bottom:1px solid rgba(201,184,232,0.4)}
+.quote-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,3vw,2rem);font-weight:300;font-style:italic;color:var(--text-mid);max-width:700px;margin:0 auto 0.8rem;line-height:1.6}
+.quote-attr{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--lavender-deep)}
+section{padding:5rem 2.5rem}
+.section-label{font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blush-deep);margin-bottom:0.8rem}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--text-dark);margin-bottom:1rem}
+.section-sub{font-size:0.9rem;color:var(--text-soft);line-height:1.8;max-width:520px;margin-bottom:3rem}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.blog-card{border-radius:20px;overflow:hidden;cursor:pointer;transition:transform 0.3s;background:white;border:1px solid rgba(232,224,245,0.5)}
+.blog-card:hover{transform:translateY(-6px)}
+.blog-card-img{height:160px;display:flex;align-items:flex-end;padding:1.2rem;position:relative}
+.blog-card:nth-child(1) .blog-card-img{background:linear-gradient(160deg,var(--blush),var(--blush-mid))}
+.blog-card:nth-child(2) .blog-card-img{background:linear-gradient(160deg,var(--lavender),var(--lavender-mid))}
+.blog-card:nth-child(3) .blog-card-img{background:linear-gradient(160deg,var(--mint),var(--mint-mid))}
+.blog-card-tag{position:absolute;top:1rem;left:1rem;background:rgba(253,250,247,0.88);padding:4px 12px;border-radius:20px;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-mid)}
+.blog-card-new{position:absolute;top:1rem;right:1rem;background:var(--blush-deep);color:white;padding:4px 10px;border-radius:20px;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase}
+.blog-card-body{padding:1.2rem}
+.blog-card-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:var(--text-dark);margin-bottom:0.4rem;line-height:1.3}
+.blog-card-date{font-size:0.72rem;color:var(--text-soft)}
+.coming-soon-strip{margin-top:2rem;padding:1.2rem 1.5rem;background:var(--lavender);border-radius:16px;display:flex;align-items:center;gap:1rem}
+.cs-dot{width:8px;height:8px;border-radius:50%;background:var(--lavender-deep);animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.cs-text{font-size:0.85rem;color:var(--text-mid)}
+.cs-text strong{color:var(--lavender-deep)}
+.outfit-section{background:var(--blush)}
+.outfit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.outfit-card{border-radius:16px;overflow:hidden;position:relative;cursor:pointer}
+.outfit-card-img{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-size:2.5rem;transition:transform 0.4s}
+.outfit-card:hover .outfit-card-img{transform:scale(1.04)}
+.outfit-card:nth-child(1) .outfit-card-img{background:linear-gradient(160deg,#f0e6ff,#d9c8f5)}
+.outfit-card:nth-child(2) .outfit-card-img{background:linear-gradient(160deg,#e6f7f0,#bce8d5)}
+.outfit-card:nth-child(3) .outfit-card-img{background:linear-gradient(160deg,#fff0f4,#f5c8d4)}
+.outfit-card:nth-child(4) .outfit-card-img{background:linear-gradient(160deg,#f5f0ff,#e0d0f8)}
+.outfit-card:nth-child(5) .outfit-card-img{background:linear-gradient(160deg,#e0f5ec,#a8dcca)}
+.outfit-card:nth-child(6) .outfit-card-img{background:linear-gradient(160deg,#ffe8ef,#f0b0c0)}
+.outfit-overlay{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(45,34,48,0.7));color:white;transform:translateY(100%);transition:transform 0.3s}
+.outfit-card:hover .outfit-overlay{transform:translateY(0)}
+.outfit-overlay p{font-size:0.75rem;letter-spacing:0.08em}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-visual{position:relative;height:420px}
+.about-ring{position:absolute;border-radius:50%;border:1px solid}
+.ring1{width:320px;height:320px;border-color:var(--lavender-mid);top:50%;left:50%;transform:translate(-50%,-50%);animation:spin 20s linear infinite}
+.ring2{width:240px;height:240px;border-color:var(--blush-mid);top:50%;left:50%;transform:translate(-50%,-50%);animation:spin 15s linear infinite reverse}
+.about-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:160px;height:160px;border-radius:50%;background:linear-gradient(135deg,var(--lavender),var(--mint));display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--text-mid);text-align:center;padding:1rem}
+@keyframes spin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+.values{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.value-item{display:flex;gap:1rem;align-items:flex-start}
+.value-dot{width:8px;height:8px;border-radius:50%;background:var(--lavender-deep);margin-top:6px;flex-shrink:0}
+.value-text{font-size:0.88rem;color:var(--text-mid);line-height:1.7}
+.value-text strong{color:var(--text-dark);font-weight:500}
+footer{padding:3rem 2.5rem;border-top:1px solid rgba(232,224,245,0.6);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:var(--text-mid)}
+.footer-note{font-size:0.75rem;color:var(--text-soft);letter-spacing:0.05em}
+.social-links{display:flex;gap:1.2rem}
+.social-links a{font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-soft);text-decoration:none;transition:color 0.2s}
+.social-links a:hover{color:var(--lavender-deep)}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">joys<span>of</span>marie</div>
+  <ul class="nav-links">
+    <li><a onclick="document.getElementById('blog').scrollIntoView({behavior:'smooth'})">Blog</a></li>
+    <li><a onclick="document.getElementById('outfits').scrollIntoView({behavior:'smooth'})">Outfit Inspo</a></li>
+    <li><a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a></li>
+  </ul>
+</nav>
+<section class="hero" id="home">
+  <div class="hero-text">
+    <div class="hero-eyebrow">color. confidence. community.</div>
+    <h1 class="hero-title">dress like you<br>mean <em>it.</em></h1>
+    <p class="hero-subtitle">A space for women who believe what you wear to work is a form of self-expression — not a compromise. Style that's joyful, sustainable, and unapologetically you.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('blog').scrollIntoView({behavior:'smooth'})">Read the Blog</button>
+      <button class="btn-outline" onclick="document.getElementById('outfits').scrollIntoView({behavior:'smooth'})">Outfit Inspo</button>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-blob blob1"></div>
+    <div class="hero-blob blob2"></div>
+    <div class="hero-blob blob3"></div>
+    <div class="hero-card">
+      <div class="hero-card-tag">Now Live</div>
+      <div class="hero-card-title">How to still be feminine in professional clothing</div>
+      <div class="hero-card-sub">You don't have to choose between looking polished and feeling like yourself.</div>
+      <div class="color-dots">
+        <div class="cdot" style="background:var(--lavender-mid)"></div>
+        <div class="cdot" style="background:var(--blush-mid)"></div>
+        <div class="cdot" style="background:var(--mint-mid)"></div>
+        <div class="cdot" style="background:#f5e0a0"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="quote-banner">
+  <p class="quote-text">"The future belongs to those who believe in the beauty of their dreams."</p>
+  <div class="quote-attr">— Eleanor Roosevelt</div>
+</div>
+<section id="blog">
+  <div class="section-label">From the Journal</div>
+  <h2 class="section-title">Latest Posts</h2>
+  <p class="section-sub">Thoughts on style, secondhand finds, mental health, and living a colorful life.</p>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <div class="blog-card-img">
+        <span class="blog-card-tag">Style</span>
+        <span class="blog-card-new">Live ✦</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-title">How to still be feminine in professional clothing</div>
+        <div class="blog-card-date">Mar 17</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-card-img">
+        <span class="blog-card-tag">Secondhand</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-title">What I love about secondhand items (and where I get it from)</div>
+        <div class="blog-card-date">Coming soon</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-card-img">
+        <span class="blog-card-tag">Lifestyle</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-title">How hobbies have helped my mental health</div>
+        <div class="blog-card-date">Coming soon</div>
+      </div>
+    </div>
+  </div>
+  <div class="coming-soon-strip">
+    <div class="cs-dot"></div>
+    <div class="cs-text">More posts dropping soon — <strong>Gingham is the new polka dot?</strong>, <strong>Airport Outfits</strong>, and more. 🌸</div>
+  </div>
+</section>
+<section class="outfit-section" id="outfits">
+  <div class="section-label">Outfit Inspo</div>
+  <h2 class="section-title">Wear More Color</h2>
+  <p class="section-sub">Looks that prove professional and personality aren't mutually exclusive.</p>
+  <div class="outfit-grid">
+    <div class="outfit-card"><div class="outfit-card-img">🌸</div><div class="outfit-overlay"><p>Blush + Cream — The Boardroom Bloom</p></div></div>
+    <div class="outfit-card"><div class="outfit-card-img">🌿</div><div class="outfit-overlay"><p>Sage + White — Fresh Authority</p></div></div>
+    <div class="outfit-card"><div class="outfit-card-img">💜</div><div class="outfit-overlay"><p>Lavender — Soft Power</p></div></div>
+    <div class="outfit-card"><div class="outfit-card-img">✨</div><div class="outfit-overlay"><p>Peter Pan Collar — Sweet & Sharp</p></div></div>
+    <div class="outfit-card"><div class="outfit-card-img">🌱</div><div class="outfit-overlay"><p>Mint + Linen — Earth Hour</p></div></div>
+    <div class="outfit-card"><div class="outfit-card-img">🏁</div><div class="outfit-overlay"><p>Gingham — The New Polka Dot</p></div></div>
+  </div>
+</section>
+<section id="about">
+  <div class="about-inner">
+    <div class="about-visual">
+      <div class="about-ring ring1"></div>
+      <div class="about-ring ring2"></div>
+      <div class="about-center">marie<br>& her joys</div>
+    </div>
+    <div>
+      <div class="section-label">About</div>
+      <h2 class="section-title">Hi, I'm Marie</h2>
+      <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.8;margin-bottom:1rem">I'm a Purdue University student, creator, and future founder with one big belief: women shouldn't have to dress down to be taken seriously at work.</p>
+      <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.8;margin-bottom:1.5rem">Joysofmarie is the beginning of something bigger — a community, a conversation, and eventually a brand built around quality clothing that's good for women and good for the earth.</p>
+      <div class="values">
+        <div class="value-item"><div class="value-dot"></div><div class="value-text"><strong>Color as confidence</strong> — your palette is your voice. Use it.</div></div>
+        <div class="value-item"><div class="value-dot" style="background:var(--blush-deep)"></div><div class="value-text"><strong>Sustainable by design</strong> — secondhand, slow fashion, quality over quantity.</div></div>
+        <div class="value-item"><div class="value-dot" style="background:var(--mint-mid)"></div><div class="value-text"><strong>Women first</strong> — made for real bodies, real careers, real lives.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">joysofmarie</div>
+  <div class="social-links">
+    <a href="#">Instagram</a>
+    <a href="#">TikTok</a>
+    <a href="#">Pinterest</a>
+  </div>
+  <div class="footer-note">© 2026 joysofmarie</div>
+</footer>
+</body>
+</html>
